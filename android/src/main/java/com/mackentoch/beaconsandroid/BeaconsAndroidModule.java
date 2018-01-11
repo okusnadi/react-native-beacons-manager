@@ -359,6 +359,10 @@ public class BeaconsAndroidModule extends ReactContextBaseJavaModule implements 
           b.putInt("rssi", beacon.getRssi());
           b.putDouble("distance", beacon.getDistance());
           b.putString("proximity", getProximity(beacon.getDistance()));
+            b.putString("address", beacon.getBluetoothAddress().toString());
+            b.putString("name", beacon.getBluetoothName().toString());
+            b.putInt("txpower", beacon.getTxPower());
+
           a.pushMap(b);
       }
       map.putArray("beacons", a);
